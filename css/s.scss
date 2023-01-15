@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+@mixin flex ($a, $d, $c) {
+    display: $a;
+    justify-content: $d;
+    align-items: $c;
+    transition: 1s;
+}
+
+.cont {
+    max-width: 940px;
+    margin: 0 auto;
+
+    .box {
+        width: 100%;
+        height: fit-content;
+
+        img {
+            width: 100%;
+        }
+
+        .bloc {
+            margin-top: 50px;
+
+            @include flex(flex,space-between , center);
+            // @include flex(flex, center, center);
+            // gap: 50px;
+
+            h1 {
+                font-weight: 700;
+                font-size: 64px;
+                line-height: 79px;
+            }
+
+            p {
+                // opacity: ;
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 24px;
+                color: #707070;
+
+            }
+        }
+
+        form {
+            margin-top: 70px;
+            // justify-content: space-between
+            @include flex(flex,center, center);
+            gap: 50px;
+            
+
+            input {
+                cursor: pointer;
+                width: 30px;
+                height: 30px;
+                opacity: 0;
+            }
+
+            .chek {
+                cursor: pointer;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                @include flex(flex, center, center);
+
+
+
+                div {
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    background-color: #707070;
+                    @include flex(flex, center, center);
+
+                }
+
+                &:nth-child(1) {
+                    
+
+                    div {
+                        background-color: #000;
+                    }
+                }
+
+                &:nth-child(2) {
+                    div {
+                        background-color: rgb(222, 229, 159);
+                    }
+                }
+
+                &:nth-child(3) {
+                    div {
+                        background-color: rgb(183, 185, 159);
+                    }
+                }
+            }
+            .aktiv{
+                border: 2px solid rgb(19, 19, 255);
+                box-shadow: 0 0 20px rgb(56, 56, 243), 0 0 20px rgb(0, 0, 255) ;
+            }
+
+            .chekColor {
+                border: 2px solid rgb(19, 19, 255);
+                box-shadow: 0 0 20px rgb(56, 56, 243), 0 0 20px rgb(0, 0, 255);
+            }
+
+        }
+    }
+}
+
+@media(max-width:480px){
+    .bloc{
+        width: 100%;
+        
+        flex-wrap: wrap;
+    }
+    #b{
+        justify-content: center;
+    }
+}
